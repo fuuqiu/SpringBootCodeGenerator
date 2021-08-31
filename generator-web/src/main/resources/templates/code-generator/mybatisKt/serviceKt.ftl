@@ -12,9 +12,9 @@ import org.springframework.transaction.annotation.Transactional
 /**
  * @description ${classInfo.classComment}
  */
+@Service
 class  ${classInfo.className}Service (
         private val ${classInfo.className?uncap_first}Mapper: ${classInfo.className}Mapper,
-        private val modelMapper: ModelMapper,
         private val richLogDao: RichLogDao,
         private val bizRedis: StatefulRedisConnection<String, String>
 ){
@@ -24,31 +24,31 @@ class  ${classInfo.className}Service (
     */
     @Transactional
     fun insert(${classInfo.className?uncap_first} : ${classInfo.className}, reqLog: ReqLog):Int{
-        ${classInfo.className}Mapper.insert(${classInfo.className?uncap_first})
+       return ${classInfo.className?uncap_first}Mapper.insert(${classInfo.className?uncap_first})
     }
 
     /**
     * 删除
     */
     @Transactional
-    fun delete(id:Int, reqLog: ReqLog):${classInfo.className}{
-        ${classInfo.className}Mapper.delete(id)
+    fun delete(id:Int, reqLog: ReqLog):Int{
+        return ${classInfo.className?uncap_first}Mapper.delete(id)
     }
 
     /**
     * 更新
     */
     @Transactional
-    fun update(${classInfo.className} ${classInfo.className?uncap_first}, reqLog: ReqLog):Int{
-        ${classInfo.className}Mapper.update(${classInfo.className?uncap_first})
+    fun update(${classInfo.className?uncap_first}: ${classInfo.className} , reqLog: ReqLog):Int{
+        return ${classInfo.className?uncap_first}Mapper.update(${classInfo.className?uncap_first})
     }
 
     /**
     * 根据主键 id 查询
     */
     @Transactional(readOnly = true)
-    fun ${classInfo.className} find(id:Int, reqLog: ReqLog):${classInfo.className}{
-        ${classInfo.className}Mapper.find(id)
+    fun find(id:Int, reqLog: ReqLog):${classInfo.className}{
+        return ${classInfo.className?uncap_first}Mapper.find(id)
     }
 
     /**
@@ -56,7 +56,7 @@ class  ${classInfo.className}Service (
     */
     @Transactional(readOnly = true)
     fun page(rb: RowBounds, sort: Sort, items: Map<String , String>, reqLog: ReqLog):List<${classInfo.className}>{
-        return articleMapper.findPage(rb, sort.orders, items)
+        return ${classInfo.className?uncap_first}Mapper.findPage(rb, sort.orders, items)
     }
 
 }

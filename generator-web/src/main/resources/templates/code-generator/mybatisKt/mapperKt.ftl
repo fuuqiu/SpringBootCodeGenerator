@@ -12,17 +12,17 @@ interface ${classInfo.className}Mapper {
     /**
     * 新增
     **/
-    insert(${classInfo.className?uncap_first}:${classInfo.className} ):Int
+    fun insert(${classInfo.className?uncap_first}:${classInfo.className} ):Int
 
     /**
     * 刪除 By Id
     **/
-    delete(id:Int):Int;
+    fun delete(id:Int):Int;
 
     /**
     * 更新
     **/
-    update(${classInfo.className?uncap_first}:${classInfo.className}):Int
+    fun update(${classInfo.className?uncap_first}:${classInfo.className}):Int
 
     /**
     * 查询 By Id
