@@ -65,6 +65,34 @@
         "description": "mapper annotation"
       }
     ]
+  },{
+    "group": "mybatisKt",
+    "templates": [{
+      "id": "120",
+      "name": "resourcesKt",
+      "description": "resourcesKt"
+    },
+      {
+        "id": "121",
+        "name": "serviceKt",
+        "description": "serviceKt"
+      },
+      {
+        "id": "123",
+        "name": "mapperKt",
+        "description": "mapperKt"
+      },
+      {
+        "id": "124",
+        "name": "mybatisKt",
+        "description": "mybatisKt"
+      },
+      {
+        "id": "125",
+        "name": "modelKt",
+        "description": "modelKt"
+      }
+    ]
   },
   {
     "group": "jpa",

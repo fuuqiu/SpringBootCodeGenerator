@@ -63,7 +63,7 @@
                 <#if fieldItem.columnName != "id" && fieldItem.columnName != "AddTime" && fieldItem.columnName != "UpdateTime" >
                     <if test="null != ${fieldItem.fieldName} and '' != ${fieldItem.fieldName}">${fieldItem.columnName} = ${r"#{"}${fieldItem.fieldName}${r"}"}<#if fieldItem_has_next>,</#if>${r"</if>"}
                 </#if>
-            </#list>
+        </#list>
         </set>
         WHERE id = ${r"#{"}id${r"}"}
     </update>

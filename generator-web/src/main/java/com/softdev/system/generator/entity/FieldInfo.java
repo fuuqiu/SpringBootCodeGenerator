@@ -15,5 +15,6 @@ public class FieldInfo {
     private String fieldClass;
     private String swaggerClass;
     private String fieldComment;
+    private String defaults;
 
 }

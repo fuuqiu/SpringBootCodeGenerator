@@ -206,6 +206,23 @@ public class TableParseUtil {
                     }  else if (columnLine.contains(" boolean")) {
                         swaggerClass = "boolean";
                     }
+                    //kotlin defaults
+                    String defaults = "\"\"" ;
+                    if (columnLine.contains(" tinyint")) {
+                        defaults = "0";
+                    } else if (columnLine.contains(" int") || columnLine.contains(" smallint")) {
+                        defaults = "0";
+                    } else if (columnLine.contains(" bigint")) {
+                        defaults = "0";
+                    } else if (columnLine.contains(" float")) {
+                        defaults = "0";
+                    } else if (columnLine.contains(" double")) {
+                        defaults = "0";
+                    }  else if (columnLine.contains(" boolean")) {
+                        defaults = "0";
+                    }else if (columnLine.contains(" time") || columnLine.contains(" date") || columnLine.contains(" datetime") || columnLine.contains(" timestamp")) {
+                        defaults = "null";
+                    }
                     // field class
                     // int(11) NOT NULL AUTO_INCREMENT COMMENT '用户ID',
                     String fieldClass = Object.class.getSimpleName();
@@ -307,6 +324,7 @@ public class TableParseUtil {
                     fieldInfo.setFieldName(fieldName);
                     fieldInfo.setFieldClass(fieldClass);
                     fieldInfo.setSwaggerClass(swaggerClass);
+                    fieldInfo.setDefaults(defaults);
                     fieldInfo.setFieldComment(fieldComment);
 
                     fieldList.add(fieldInfo);
