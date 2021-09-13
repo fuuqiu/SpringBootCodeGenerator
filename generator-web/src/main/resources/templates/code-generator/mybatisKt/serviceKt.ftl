@@ -47,7 +47,7 @@ class  ${classInfo.className}Service (
     * 根据主键 id 查询
     */
     @Transactional(readOnly = true)
-    fun find(id:Int, reqLog: ReqLog):${classInfo.className}{
+    fun find(id:Int, reqLog: ReqLog) : ${classInfo.className}?{
         return ${classInfo.className?uncap_first}Mapper.find(id)
     }
 
@@ -58,5 +58,7 @@ class  ${classInfo.className}Service (
     fun page(rb: RowBounds, sort: Sort, items: Map<String , String>, reqLog: ReqLog):List<${classInfo.className}>{
         return ${classInfo.className?uncap_first}Mapper.findPage(rb, sort.orders, items)
     }
+
+
 
 }

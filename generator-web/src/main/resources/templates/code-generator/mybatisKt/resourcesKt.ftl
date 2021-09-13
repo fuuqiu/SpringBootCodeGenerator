@@ -44,4 +44,24 @@ class ${classInfo.className}Resource(
         ctx.json(${classInfo.className?uncap_first})
     }
 
+    //分页查询
+    fun findPage(ctx: Context) {
+        val rb = ctx.rowBounds()
+        val sp = ctx.sortParam()
+        val ps = ctx.pageFilterParams(${classInfo.className}::class.java)
+        val list = ${classInfo.className?uncap_first}Service.findPage(rb, sp, ps, ctx.reqUserLog())
+        ctx.json(list)
+    }
+
+/**
+//优惠券
+path("/${classInfo.className?uncap_first}") {
+    post("/", security(${classInfo.className?uncap_first}Resource::insert))
+    get("/:id", ${classInfo.className?uncap_first}Resource::findById)
+    delete("/:id", security(${classInfo.className?uncap_first}Resource::delete))
+    put("/:id", security(${classInfo.className?uncap_first}Resource::update))
+    get("/", ${classInfo.className?uncap_first}Resource::findPage)
+}
+**/
+
 }

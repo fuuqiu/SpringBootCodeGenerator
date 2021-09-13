@@ -27,7 +27,7 @@ interface ${classInfo.className}Mapper {
     /**
     * 查询 By Id
     **/
-    fun find(id:Int):${classInfo.className}
+    fun find(id:Int) : ${classInfo.className}?
 
     /**
     * 分页查询
