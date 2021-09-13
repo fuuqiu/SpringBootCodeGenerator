@@ -55,7 +55,7 @@ class ${classInfo.className}Resource(
 
 /**
 //优惠券
-path("/${classInfo.className?uncap_first}") {
+path("/${classInfo.className?uncap_first}s") {
     post("/", security(${classInfo.className?uncap_first}Resource::insert))
     get("/:id", ${classInfo.className?uncap_first}Resource::findById)
     delete("/:id", security(${classInfo.className?uncap_first}Resource::delete))
