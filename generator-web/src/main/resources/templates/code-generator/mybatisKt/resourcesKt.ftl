@@ -54,7 +54,7 @@ class ${classInfo.className}Resource(
     }
 
 /**
-//优惠券
+//${classInfo.classComment} 路由
 path("/${classInfo.className?uncap_first}s") {
     post("/", security(${classInfo.className?uncap_first}Resource::insert))
     get("/:id", ${classInfo.className?uncap_first}Resource::findById)
