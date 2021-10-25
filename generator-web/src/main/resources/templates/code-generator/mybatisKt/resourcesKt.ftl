@@ -1,6 +1,6 @@
 package  ${packageName}.admin.web.resources
 
-import io.javalin.Context
+import io.javalin.http.Context
 import ${packageName}.admin.BizCodes
 import ${packageName}.admin.server.beans
 import ${packageName}.admin.service.${classInfo.className}Service

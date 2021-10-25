@@ -1,7 +1,6 @@
 package ${packageName}.admin.service
 import ${packageName}.core.domain.ReqLog
 import ${packageName}.core.domain.Sort
-import ${packageName}.dao.ArticleDao
 import ${packageName}.dao.RichLogDao
 import ${packageName}.entity.${classInfo.className}
 import ${packageName}.mapper.${classInfo.className}Mapper
