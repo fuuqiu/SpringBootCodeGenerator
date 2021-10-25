@@ -1,6 +1,6 @@
-package cn.gopro.nete.mapper
-import cn.gopro.nete.core.domain.Sort
-import cn.gopro.nete.entity.${classInfo.className}
+package ${packageName}.mapper
+import ${packageName}.core.domain.Sort
+import ${packageName}.entity.${classInfo.className}
 import org.apache.ibatis.annotations.Param
 import org.apache.ibatis.session.RowBounds
 
