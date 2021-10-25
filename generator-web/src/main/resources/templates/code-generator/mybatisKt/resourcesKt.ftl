@@ -49,7 +49,7 @@ class ${classInfo.className}Resource(
         val rb = ctx.rowBounds()
         val sp = ctx.sortParam()
         val ps = ctx.pageFilterParams(${classInfo.className}::class.java)
-        val list = ${classInfo.className?uncap_first}Service.findPage(rb, sp, ps, ctx.reqUserLog())
+        val list = ${classInfo.className?uncap_first}Service.page(rb, sp, ps, ctx.reqUserLog())
         ctx.json(list)
     }
 
